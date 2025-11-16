@@ -10,7 +10,7 @@ ENV GOARCH=$TARGETARCH
 
 RUN apt-get update && apt-get install -y git build-essential \
     && go build -v -trimpath -tags \
-        "with_gvisor,with_quic,with_dhcp,with_wireguard,with_utls,with_acme,with_clash_api,with_tailscale,with_ccm,badlinkname,tfogo_checklinkname0" \
+        "with_gvisor,with_quic,with_dhcp,with_wireguard,with_utls,with_acme,with_clash_api,with_tailscale,with_ccm" \
         -o /out/sing-box \
         ./cmd/sing-box
 
