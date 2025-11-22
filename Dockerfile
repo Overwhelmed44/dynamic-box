@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM golang:1.25 AS builder
+FROM golang:1.25-bookworm AS builder
 
 WORKDIR /src
 
@@ -14,11 +14,11 @@ ENV GOARCH=$TARGETARCH
 
 RUN apt-get update && apt-get install -y git build-essential \
     && go build -v -trimpath -tags \
-        "with_gvisor,with_quic,with_dhcp,with_wireguard,with_utls,with_acme,with_clash_api,with_tailscale,with_ccm" \
+        "with_gvisor,with_quic,with_dhcp,with_wireguard,with_utls,with_acme,with_clash_api,with_tailscale" \
         -o /out/sing-box \
         ./cmd/sing-box
 
-FROM --platform=$TARGETPLATFORM debian:stable-slim
+FROM debian:stable-slim
 
 RUN apt-get update && apt-get install -y \
     bash \
