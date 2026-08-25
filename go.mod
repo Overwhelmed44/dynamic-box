@@ -3,7 +3,7 @@ module github.com/sagernet/sing-box
 go 1.24.7
 
 require (
-	github.com/Overwhelmed44/dynamic-vless v1.0.0
+	github.com/Overwhelmed44/dynamic-vless v1.1.0
 	github.com/anthropics/anthropic-sdk-go v1.14.0
 	github.com/anytls/sing-anytls v0.0.11
 	github.com/caddyserver/certmagic v0.23.0
